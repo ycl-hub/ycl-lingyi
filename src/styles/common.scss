@@ -1,0 +1,635 @@
+// global common css
+
+// 特殊字体
+@font-face {
+  font-family: YouSheBiaoTiHei;
+  src: url('../assets/fonts/youshebiaotihei/YouSheBiaoTiHei.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/youshebiaotihei/YouSheBiaoTiHei.ttf') format('truetype') /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: PingFang SC;
+  src: url('../assets/fonts/youshebiaotihei/PingFang-SC-Semibold.otf') format('truetype')
+}
+
+// 凌壹科技抽屉组件样式
+.tone_sip .el-drawer{
+  color: #E6E6E6;
+  // background: url('../assets/images/equipment/leftBg.png') no-repeat;
+  // background-size: 100% 100%;
+  padding-bottom: 15px;
+  background: radial-gradient(circle, rgba(0, 39, 60, 0.8), rgba(0, 79, 120, 0.8));
+  // border: 1px solid rgba(52, 193, 218, 0.6);
+  box-shadow: inset 0px 0px 10px 2px #35879d;
+  clip-path: polygon( 10px 0, calc(100% - 10px) 0, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px),
+    0 10px
+  );
+}
+.tone_sip .el-drawer__header{
+  background: transparent !important;
+  color: #F1F1F1;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.tone_sip .el-drawer__body {
+  border-top: 1px solid #35879d;
+  overflow: auto;
+  padding: 0 20px 20px;
+}
+.tone_sipn_drawer{left: unset !important;}
+
+.pos .el-drawer__body{ position: relative;}
+.tone_drawer .el-drawer__container{ width: 330px;}
+.tone_sipn_drawer .el-drawer__container{ width: 330px;}
+.tone_sipn_drawer .el-drawer__container .el-drawer{ width: 100% !important;}
+// .tone_draw .el-drawer__container{ width: 300px;}
+// .tone_draw .el-drawer__header{margin-bottom: 0 !important;}
+// .devlist{padding: 0 20px;}
+.devlist li{ height: 40px;line-height: 40px; border-bottom: 1px dashed #497a7a; cursor: pointer;color: #F1F1F1;padding-left: 4px;}
+
+// tree组件前面的图标
+// .el-tree .el-tree-node__expand-icon.expanded {
+//   -webkit-transform: rotate(0deg);
+//   transform: rotate(0deg);
+// }
+// .el-tree .el-icon-caret-right:before {
+//   content: "\e6e0";
+//   font-size: 14px;
+//   color: #01d3f9;
+// }
+// .el-tree .el-tree-node__expand-icon.expanded.el-icon-caret-right:before{
+//   content: "\e6df";
+//   font-size: 14px;
+//   color: #01d3f9;
+// }
+// .el-tree .is-leaf.el-icon-caret-right:before {
+//   content: "";
+// }
+.el-icon-arrow-right:before {
+  color: #01d3f9;
+}
+.el-tree .is-leaf.el-icon-arrow-right:before {
+  // content: "";
+  visibility: hidden;
+}
+.t01_tree{ background: transparent !important;}
+// .t01_tree .is-leaf{padding-left: 0 !important;}
+
+// 音频背景
+.el-notification{
+  background: radial-gradient(circle, #00273C, #004F78);
+  border: 1px solid rgba(52, 193, 218, 0.6);
+  box-shadow: inset 0px 0px 10px 2px #35879d;
+  opacity: 0.8;
+}
+.el-notification__title{ color: #FFF !important;}
+
+// 拖拽
+.vdr.active:before {
+  outline: none !important;
+}
+// 渐变背景斜切角
+.bevel {
+  background: radial-gradient(circle, rgba(0, 39, 60, 0.8), rgba(0, 79, 120, 0.8));
+  // border: 1px solid rgba(52, 193, 218, 0.6);
+  box-shadow: inset 0px 0px 10px 2px #35879d;
+  clip-path: polygon( 10px 0, calc(100% - 10px) 0, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px),
+    0 10px
+  );
+}
+// 圈选视频
+.quanxuanDialog {
+  background: radial-gradient(circle, #00273C, #004F78);
+  border: 1px solid rgba(52, 193, 218, 0.6);
+  box-shadow: inset 0px 0px 10px 2px #35879d;
+  opacity: 1;
+  color: #fff;
+  .quanxuan_header{
+    height: 40px; line-height: 40px; padding:0px 10px; overflow: hidden; cursor: move;
+    border-bottom: 1px solid #497a7a;
+    span.tit{float: left;}
+    .min {float: right; font-size: 16px; cursor: pointer; line-height: 40px;margin-right: 10px;}
+    border-bottom: 1px solid #497a7a;
+    .large {float: right; font-size: 16px; cursor: pointer; line-height: 40px;margin-right: 10px;}
+    border-bottom: 1px solid #497a7a;
+    .close{float: right; font-size: 16px; cursor: pointer; line-height: 40px;margin-right: 0px;}
+  }
+  .quanxuan_con {
+    height: calc(100% - 90px);
+    width: 100%;
+    .quanxuan_con_left {
+      width: calc(100% - 230px);
+      height: 100%;
+      background: #00111A;
+      .videoDrag{
+        // border: 1px solid rgb(240, 229, 20);
+        box-shadow: inset 0px 0px 10px 2px #35879d;
+      }
+      .quanxuanItem{
+        width: 100%;
+        height: 100%;
+        color: #F1F1F1;
+        overflow: hidden;
+        position: relative;
+        .qx{
+          width: 100%;
+          height: 100%;
+        }
+        .qx_con {
+          width: 100%;height: 100%;
+        }
+        .qx_c{width: 100%;height: 100%;position: relative;}
+        .qx_c video{ width: 100%; height: 100%;}
+        .qx_c:hover .vodeocontrol{bottom: 0px;}
+        .qx_c .vodeocontrol{position: absolute; height: 40px; width: 100%; bottom: -40px; background:rgba(255,255,255,.2); transition: all .3s;display: flex;align-items: flex-start;justify-content: space-around;}
+        .info {
+          position: absolute;
+          height: 30px;
+          line-height: 30px;
+          color: #fff;
+          width: 100%;
+          // background:rgba(255,255,255,.2);
+          transition: all .3s;
+          padding: 0 10px;
+          z-index: 2;
+          display: flex;
+          justify-content: space-between;
+        }
+        .qx_c:hover .info {
+          top: 0;
+        }
+        .qx_c{
+          .v-btn{ width:10%;height: 40px; margin-right: 10px; border-radius: 50%; cursor: pointer; line-height: 1 !important;
+          }
+          &>span:not(.info){
+            z-index: 2222;
+            transform: scale(1.5);
+            border-radius: 50%;
+            background: url('../assets/images/videoScheduling/v_btnBg.png') center center no-repeat; background-size: cover;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+          }
+          .picture-btn {
+            // width: 40px;
+            height: 40px;
+            // margin-top: 3px;
+            background: url('../assets/images/videoScheduling/picture.png') no-repeat center;
+            background-size: contain;
+          }
+          .record-btn {
+            // width: 37px;
+            width:9%;
+            height: 40px;
+            background: url('../assets/images/videoScheduling/record.png') no-repeat center;
+            background-size: contain;
+          }
+          .mute-btn, .unmute-btn {
+            font-size: 14px;
+            background: url('../assets/images/videoScheduling/v_btnBg.png') center center no-repeat; background-size: contain;
+            text-align: center;
+            // width: 40px;
+            height: 40px;
+            // margin-top: 3px;
+            .full {
+              color:#fff;
+              margin-top: 11px;
+            }
+          }
+          .fenfa-btn {
+            background: url('../assets/images/videoScheduling/fenfa.png') no-repeat center;
+            background-size: contain;
+            // width: 39px;
+            height: 40px;
+            // margin-top: 4px;
+          }
+          .end-btn{background: url('../assets/images/videoScheduling/end.png') center center no-repeat; background-size: contain;margin-right: 15px;}
+          .large, .min {
+            margin-left: 15px;
+            font-size: 14px;
+            background: url('../assets/images/videoScheduling/v_btnBg.png') no-repeat center center; background-size: contain;
+            text-align: center;
+            // width: 40px;
+            height: 40px;
+            // margin-top: 3px;
+            .full {
+              color:#fff;
+              margin-top: 11px;
+            }
+          }
+          .min {
+            // width: 42px;
+            height: 42px;
+            .full {
+              width: 20px;
+              height: 18px;
+            }
+          }
+          .v_cloundTop{
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%) scale(1.5);
+                cursor: pointer;
+          }
+          .v_cloundBot{
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%) scale(1.5);
+                cursor: pointer;
+          }
+          .v_cloundLeft{
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%) scale(1.5);
+                cursor: pointer;
+          }
+          .v_cloundRight{
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%) scale(1.5);
+                cursor: pointer;
+          }
+          .v_cloundMax,.v_cloundMin{
+                position: absolute;
+                top: 10px;
+                cursor: pointer;
+          }
+          .v_cloundMax{
+            left: calc(20% - 10px);
+          }
+          .v_cloundMin{
+            left: 25%;
+          }
+        }
+
+        .kongxian {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .endCall{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            background: url('../assets/images/videoScheduling/endCall.png') center center no-repeat; background-size: 100% 100%;
+          }
+          .kongxian_icon {
+            width: 30px;
+            height: 30px;
+          }
+          .kongxian_text {
+            padding: 3px 0;
+            pointer-events: none;
+            color: #5e708e;
+            font-size: 12px;
+          }
+        }
+      }
+      .four {
+        float: left;
+        width: 50%;
+        height: 50%;
+        background: rgb(0, 0, 0);
+        &:first-child {
+          border-right: 1px solid #497a7a;
+          border-bottom: 1px solid #497a7a;
+        }
+        &:nth-child(2) {
+          border-bottom: 1px solid #497a7a;
+        }
+        &:nth-child(3) {
+          border-right: 1px solid #497a7a;
+        }
+      }
+    }
+    .quanxuan_con_right {
+      width: 230px;
+      height: 100%;
+      // padding: 0px 10px;
+      border-left: 1px solid #497a7a;
+      .right_header {
+        height: 30px;
+        line-height: 30px;
+        .filter {
+          width: 100%;
+          .el-input__inner {
+            border: none;
+            box-sizing: border-box;
+            background-color: rgba(0, 85, 128, 0.6);
+            color: #fff;
+            font-size: 12px;
+            border-radius: 0;
+            padding: 0 7px;
+            height: 30px;
+            &::-webkit-input-placeholder {
+              // color:#0fabd4;
+              font-size: 12px;
+            }
+            &:-moz-placeholder {
+              // color:#0fabd4;
+              font-size: 12px;
+            }
+            &::-moz-placeholder {
+              // color:#0fabd4;
+              font-size: 12px;
+            }
+            &:-ms-input-placeholder {
+              // color:#0fabd4;
+              font-size: 12px;
+            }
+          }
+          .el-input__suffix{
+            right: 0;
+            .el-input__suffix-inner{
+              img{
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+          .el-input__prefix {
+            .el-input__icon {
+              // line-height: 30px;
+              // color:#0fabd4;
+            }
+          }
+          .el-input-group__append {
+            color:#0fabd4;
+            font-size: 16px;
+            background-color: rgba(0, 85, 128, 0.6);
+            border: 1px solid #01cfff;
+            border-left: none;
+            padding: 0 20px;
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+            .el-button--mini {
+              padding: 7px 10px;
+            }
+          }
+        }
+        .left {
+          width: 50%;
+        }
+        .right {
+          width: 50%;
+        }
+      }
+      .rightInfo {
+        overflow: auto;
+        height: calc(100% - 30px);
+        .rightInfoLi {
+          color: #01d3f9;
+          height: 30px;
+          line-height: 30px;
+          border-bottom: 1px solid #497a7a;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-sizing: border-box;
+          padding-left: 10px;
+          .left {
+            width: 40%;
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .center{
+            width: 30%;
+          }
+          .right {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: right;
+            padding-right: 5px;
+            display: flex;
+            align-items: center;
+          }
+          &:last-child {
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  .quanxuan_footer {
+    background: radial-gradient(circle, #00273C, #004F78);
+    // display: none;
+    border-top: 1px solid #497a7a;
+    height: 50px; line-height: 40px; padding:0px 10px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    .btnWrap{
+      width: 250px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .btn{
+        cursor: pointer;
+        background: url('../assets/images/equipment/btnBg.png') no-repeat;
+        background-size: 100% 100%;
+        width: 80px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+        display: inline-block;
+        color: #01cfff;
+        text-align: center;
+        margin-right: 5px;
+      }
+    }
+    .paging, .el-pagination{
+      display: flex;
+      line-height: 1;
+      align-items: center;
+        button{
+          background-color: transparent !important;
+          .el-icon-arrow-right:before{
+            color:#0AA3F5;
+          }
+        }
+        .el-pager{
+          li{
+            background-color: transparent !important;
+            color: white;
+          }
+          .active{
+            color: #0AA3F5 !important;
+          }
+      }
+    }
+    .el-pagination button, .el-pagination span:not([class*=suffix]) {
+      display: inline-block;
+      font-size: 13px;
+      min-width: 35.5px;
+      height: 28px;
+      color: white;
+      line-height: 28px;
+      vertical-align: top;
+      box-sizing: border-box;
+  }
+  }
+}
+.fullScreen {
+  .content-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+// switch
+// .switch {
+//   padding: 12px 0 18px 10px;
+//   color: #fff;
+//   .el-switch {
+//     margin-left: 20px;
+//     .el-switch__label {
+//       font-size: 12px;
+//       color: #fff;
+//       &.is-active {
+//         color: #01CFFF;
+//       }
+//     }
+//     .el-switch__core {
+//       width: 36px !important;
+//       border-color: #01CFFF !important;
+//       height: 16px;
+//       &::after {
+//         width: 12px;
+//         height: 12px;
+//         background-color: #01CFFF;
+//       }
+//     }
+//     &.is-checked .el-switch__core::after {
+//       margin-left: -13px;
+//     }
+//   }
+// }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+.qx_c_single_call{
+  .v-btn{ width:10%;height: 40px; margin-right: 10px; border-radius: 50%; cursor: pointer; line-height: 1 !important;
+  }
+  &>span:not(.info){
+    z-index: 2222;
+    transform: scale(1.5);
+    border-radius: 50%;
+    background: url('../assets/images/videoScheduling/v_btnBg.png') center center no-repeat; background-size: cover;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2px;
+  }
+  .picture-btn {
+    // width: 40px;
+    height: 40px;
+    // margin-top: 3px;
+    background: url('../assets/images/videoScheduling/picture.png') no-repeat center;
+    background-size: contain;
+  }
+  .record-btn {
+    // width: 37px;
+    width:9%;
+    height: 40px;
+    background: url('../assets/images/videoScheduling/record.png') no-repeat center;
+    background-size: contain;
+  }
+  .mute-btn, .unmute-btn {
+    font-size: 14px;
+    background: url('../assets/images/videoScheduling/v_btnBg.png') center center no-repeat; background-size: contain;
+    text-align: center;
+    // width: 40px;
+    height: 40px;
+    // margin-top: 3px;
+    .full {
+      color:#fff;
+      margin-top: 11px;
+    }
+  }
+  .fenfa-btn {
+    background: url('../assets/images/videoScheduling/fenfa.png') no-repeat center;
+    background-size: contain;
+    background-size: 38px 38px;
+    height: 40px;
+  }
+  .end-btn{background: url('../assets/images/videoScheduling/end.png') center center no-repeat; background-size: contain;margin-right: 15px;background-size: 36px 36px;}
+  .large, .min {
+    margin-left: 15px;
+    font-size: 14px;
+    background: url('../assets/images/videoScheduling/v_btnBg.png') no-repeat center center; background-size: contain;
+    text-align: center;
+    height: 40px;
+    .full {
+      color:#fff;
+      margin-top: 11px;
+    }
+  }
+  .min {
+    // width: 42px;
+    height: 42px;
+    .full {
+      width: 20px;
+      height: 18px;
+    }
+  }
+  .v_cloundTop{
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%) scale(1.5);
+        cursor: pointer;
+  }
+  .v_cloundBot{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%) scale(1.5);
+        cursor: pointer;
+  }
+  .v_cloundLeft{
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%) scale(1.5);
+        cursor: pointer;
+  }
+  .v_cloundRight{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%) scale(1.5);
+        cursor: pointer;
+  }
+  .v_cloundMax,.v_cloundMin{
+        position: absolute;
+        top: 10px;
+        cursor: pointer;
+  }
+  .v_cloundMax{
+    left: calc(20% - 10px);
+  }
+  .v_cloundMin{
+    left: 25%;
+  }
+}
